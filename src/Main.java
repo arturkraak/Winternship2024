@@ -5,7 +5,7 @@ import java.util.*;
 import java.util.stream.Stream;
 
 public class Main {
-    public static Map<String, Player> players = new HashMap<>();
+    public static Map<String, Player> players = new TreeMap<>();
 
     public static void main(String[] args) {
         // PROCESS DATA
