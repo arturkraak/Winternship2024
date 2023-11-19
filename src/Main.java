@@ -100,7 +100,7 @@ public class Main {
     public static void bet(Player player, String matchID, int betAmount, String betSide) {
         String[] matchArr;
         try (Stream<String> lines = Files.lines(Paths.get("./resource/match_data.txt"))) {
-            String match = lines.filter(str->str.startsWith(matchID)).findFirst().orElseThrow(() -> new RuntimeException("Match " + matchID + " not found."));
+            String match = lines.filter(str -> str.startsWith(matchID)).findFirst().orElseThrow(() -> new RuntimeException("Match " + matchID + " not found."));
             matchArr = match.split(",");
         } catch (IOException e) {
             throw new RuntimeException(e);

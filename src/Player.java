@@ -9,7 +9,9 @@ public class Player {
     private int wins = 0;
     private String illegalAction;
 
-    public long getCasinoBalance() { return casinoBalance; }
+    public long getCasinoBalance() {
+        return casinoBalance;
+    }
 
     public long getPlayerBalance() {
         return playerBalance;
@@ -19,7 +21,9 @@ public class Player {
         this.playerBalance += amount;
     }
 
-    public void subPlayerBalance(int amount) {this.playerBalance -= amount; }
+    public void subPlayerBalance(int amount) {
+        this.playerBalance -= amount;
+    }
 
     public String getIllegalAction() {
         return illegalAction;
