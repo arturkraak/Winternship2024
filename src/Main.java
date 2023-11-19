@@ -5,7 +5,7 @@ import java.util.*;
 import java.util.stream.Stream;
 
 public class Main {
-    public static Map<String, Player> players = new TreeMap<>();
+    public static Map<String, Player> players = new HashMap<>();
 
     public static void main(String[] args) {
         // PROCESS DATA
@@ -22,9 +22,10 @@ public class Main {
 
         // RESULTS
         long casinoBalanceTotal = 0;
+        Map<String, Player> sortedPlayers = new TreeMap<>(players);
         List<String> legitimatePlayers = new ArrayList<>();
         List<String> illegalPlayers = new ArrayList<>();
-        for (var player : players.entrySet()) {
+        for (var player : sortedPlayers.entrySet()) {
             if (player.getValue().getIllegalAction() != null) {
                 illegalPlayers.add(player.getKey() + " " + player.getValue().getIllegalAction());
             } else {
