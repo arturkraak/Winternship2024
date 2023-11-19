@@ -118,20 +118,20 @@ public class Main {
             switch (outcome) {
                 case "A":
                     if (betSide.equals("A")) {
-                        player.addPlayerBalance(betAmount);
-                        player.addPlayerBalance((int) Math.floor(betAmount * sideA_Rate));
+                        int winAmount = (int) Math.floor(betAmount * sideA_Rate);
+                        player.addPlayerBalance(betAmount + winAmount);
+                        player.subCasinoBalance(winAmount);
                         player.incrementWins();
-                        player.subCasinoBalance((int) Math.floor(betAmount * sideA_Rate));
                     } else {
                         player.addCasinoBalance(betAmount);
                     }
                     break;
                 case "B":
                     if (betSide.equals("B")) {
-                        player.addPlayerBalance(betAmount);
-                        player.addPlayerBalance((int) Math.floor(betAmount * sideB_Rate));
+                        int winAmount = (int) Math.floor(betAmount * sideB_Rate);
+                        player.addPlayerBalance(betAmount + winAmount);
+                        player.subCasinoBalance(winAmount);
                         player.incrementWins();
-                        player.subCasinoBalance((int) Math.floor(betAmount * sideB_Rate));
                     } else {
                         player.addCasinoBalance(betAmount);
                     }
